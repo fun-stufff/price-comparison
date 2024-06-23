@@ -1,0 +1,183 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --accent-color: #5905f4;
+    --body-color: whitesmoke;
+    --heading-font-family: 'Poppins', sans-serif;
+    --body-font-family: 'Lato', sans-serif;
+}
+
+/* Large screen  */
+@media (max-width: 1400px) {
+  html {
+    font-size: 20px;
+  }
+}
+
+/* Tablet screen  */
+@media (max-width: 768px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+/* Mobile screen  */
+@media (max-width: 450px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+body {
+    background-color: var(--body-color);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--body-font-family);
+}
+
+.price-comparison {
+    display: flex;
+    justify-content: center;
+    /* Items are stretched to fit the container */
+    align-items: stretch;
+    width: 100%;
+    margin: 1rem;
+}
+
+.price-column {
+    background-color: var(--body-color);
+    box-shadow: 0 7px 30px rgba(52, 31, 97, 0.3);
+    padding: 2rem;
+    /* Specifies how much the item will grow relative to the rest of the flexible items inside the same container */
+    flex-grow: 1;
+    /* Initial length of a flexible item */
+    /* flex-basis: 0; */
+    max-width: 275px;
+    border-radius: .5rem;
+}
+
+.price-column.popular {
+    position: relative;
+    background-color: var(--accent-color);
+    color: white;
+    margin-top: -1.5rem;
+    margin-bottom: -1.5rem;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    box-shadow: 0 7px 30px rgba(52, 13, 135, 0.7);
+}
+
+.price-column:first-child {
+  border-top-right-radius: 0; 
+  border-bottom-right-radius: 0; 
+}
+
+.price-column:last-child {
+  border-top-left-radius: 0; 
+  border-bottom-left-radius: 0; 
+}
+
+.price-column:hover {
+    outline: .3rem solid var(--accent-color);
+}
+
+.price-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: var(--heading-font-family);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.price {
+    font-size: 2.5rem;
+    display: flex;
+}
+
+.dollar-sign {
+    font-size: 1rem;
+    margin-top: 0.2rem;
+    margin-right: .3rem;
+}
+
+.per-month {
+    align-self: flex-end;
+    font-size: 1rem;
+    margin-bottom: .3rem;
+    margin-left: .2rem;
+}
+
+.plan-name {
+  font-size: 1rem;
+  margin-top: .3rem;
+}
+
+.popular-tag {
+    position: absolute;
+    font-size: .8rem;
+    top: .5rem;
+    right: .5rem;
+    background-color: var(--body-color);
+    color: var(--accent-color);
+    border-radius: .3rem;    
+    padding: .3rem;
+}
+
+.divider {
+    height: .1rem;
+    width: 100%;
+    background-color: var(--accent-color);
+    margin-top: .5rem;
+    margin-bottom: 1rem;
+}
+
+.price-column.popular .divider {
+  background-color: var(--body-color);
+}
+
+.feature {
+    font-size: .9rem;
+    display: flex;
+    align-items: center;
+    margin: .5rem;
+}
+
+.feature img {
+    width: 10%;
+    height: 10%;
+    margin-right: .5rem;
+}
+
+.feature.unavailable {
+    opacity: .8;
+    text-decoration: line-through;
+}
+
+.cta {
+    border: none;
+    background-color: var(--accent-color);
+    color: var(--body-color);
+    font-size: 1rem;
+    font-family: var(--heading-font-family);
+    font-weight: bold;
+    padding: .2em;
+    width: 100%;
+    border-radius: .5em;
+    margin-top: 1rem;
+    cursor: pointer;
+    transition: transform 100ms ease-in-out;
+}
+
+.price-column.popular .cta {
+    background-color: var(--body-color);
+    color: var(--accent-color);
+}
+
+.cta:hover, .cta:focus {
+    transform: scale(1.1);
+}
